@@ -1,17 +1,9 @@
 @import "tailwindcss";
-
-/* Global reset: remove default margin and padding for all elements */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "./styles/colors.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
 }
 
 @theme inline {
