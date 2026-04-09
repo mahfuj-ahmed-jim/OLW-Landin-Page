@@ -19,7 +19,10 @@ const Header = () => {
         <ul className="flex items-center gap-6">
           {navItems.map((item) => (
             <li key={item}>
-              <a href="#" className="nav-link">
+              <a
+                href="#"
+                className="text-(--color-nav-text) text-lg font-normal no-underline underline-offset-8 transition-all duration-150 ease-in-out hover:text-(--color-accent) hover:font-bold hover:underline hover:decoration-(--color-accent)"
+              >
                 {item}
               </a>
             </li>
