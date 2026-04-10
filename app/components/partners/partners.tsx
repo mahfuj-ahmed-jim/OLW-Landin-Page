@@ -9,7 +9,7 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
   const partners = Array.from({ length: 11 }, (_, i) => i + 1);
 
   return (
-    <div className={`w-full bg-(--color-partners-bg) ${className ?? ""}`}>
+    <section className={`w-full bg-(--color-partners-bg) ${className ?? ""}`}>
       <ul
         className="flex items-center justify-start gap-16.25 list-none m-0 p-0 overflow-x-auto"
         role="list"
@@ -35,7 +35,7 @@ const Partners: React.FC<PartnersProps> = ({ className }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

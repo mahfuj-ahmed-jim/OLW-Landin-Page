@@ -5,7 +5,11 @@ const navItems = ["Home", "About", "Services", "Pricing", "Blog", "Resources"];
 
 const Header = () => {
   return (
-    <div className="w-full px-25 py-5 flex items-center justify-between">
+    <section
+      className="w-full px-25 py-5 flex items-center justify-between"
+      style={{ backgroundColor: "var(--color-white-background)" }}
+    >
+      {" "}
       <Image
         src="/google_logo.svg"
         alt="Google logo"
@@ -14,7 +18,6 @@ const Header = () => {
         className="h-11 w-auto"
         priority
       />
-
       <nav>
         <ul className="flex items-center gap-6">
           {navItems.map((item) => (
@@ -29,7 +32,6 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-
       <Button
         type="base"
         verticalPadding="py-[13.5px]"
@@ -47,7 +49,7 @@ const Header = () => {
           </>
         }
       />
-    </div>
+    </section>
   );
 };
 
