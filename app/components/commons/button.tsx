@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   const classes = [
     verticalPadding,
     horizontalPadding,
-    "inline-flex items-center justify-center font-medium focus:outline-none",
+    "inline-flex items-center justify-center font-medium focus:outline-none hover:cursor-pointer",
     variants[type],
   ].join(" ");
 
