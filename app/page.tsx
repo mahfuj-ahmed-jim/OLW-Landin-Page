@@ -1,3 +1,4 @@
+import { GetStarted } from "./components/getStarted/getStarted";
 import Header from "./components/header/header";
 import Partners from "./components/partners/partners";
 import { Pricing } from "./components/pricing/pricing";
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <Pricing />
       <Tools />
+      <GetStarted />
     </div>
   );
 }
