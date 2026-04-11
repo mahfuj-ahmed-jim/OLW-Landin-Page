@@ -1,3 +1,4 @@
+import { Banner } from "./components/banner/banner";
 import { GetStarted } from "./components/getStarted/getStarted";
 import Header from "./components/header/header";
 import Partners from "./components/partners/partners";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <div className="">
       <Header />
+      <Banner />
       <Partners />
       <Services />
       <Pricing />
