@@ -2,6 +2,7 @@ import Header from "./components/header/header";
 import Partners from "./components/partners/partners";
 import { Pricing } from "./components/pricing/pricing";
 import Services from "./components/services/services";
+import { Tools } from "./components/tools/tools";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Partners />
       <Services />
       <Pricing />
+      <Tools />
     </div>
   );
 }
