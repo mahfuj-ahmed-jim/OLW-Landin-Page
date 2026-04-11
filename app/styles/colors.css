@@ -29,4 +29,9 @@
 
   /* switch background (uses same base color as nav text with alpha) */
   --color-switch-bg: rgba(30, 30, 30, 0.32);
+  /* feature text colors */
+  --color-feature-disabled: #a0abbb;
+  /* colors used when a card is on accent (hover) */
+  --color-on-accent: #ffffff;
+  --color-description-on-accent: #f7f8f9;
 }

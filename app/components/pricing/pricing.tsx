@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Button from "../commons/button";
 
 type PricingPlan = {
   id: string;
@@ -154,44 +155,90 @@ export const Pricing = () => {
               <li
                 key={plan.id}
                 className={
-                  "flex flex-col rounded-[10px] py-10 px-6 border opacity-100 bg-[var(--color-white-background)] border-[color:var(--color-service-border)]"
+                  "group flex flex-col rounded-[10px] py-10 px-6 border opacity-100 bg-[var(--color-white-background)] border-[color:var(--color-service-border)] hover:bg-[var(--color-accent)] transition-colors duration-200"
                 }
               >
                 <p
                   className={
-                    "font-bold text-[22px] leading-[100%] tracking-[0%] text-[var(--color-pay-text)]"
+                    "font-bold text-[22px] leading-[100%] tracking-[0%] text-[var(--color-pay-text)] group-hover:text-[var(--color-on-accent)]"
                   }
                 >
                   {plan.title}
                 </p>
                 <p
                   className={
-                    "font-normal not-italic text-[16px] leading-[100%] tracking-[0%] text-(--color-description-text) mt-3"
+                    "font-normal not-italic text-[16px] leading-[100%] tracking-[0%] text-[var(--color-description-text)] group-hover:text-[var(--color-description-on-accent)] mt-3"
                   }
                 >
                   {plan.description}
                 </p>
-                <p className="mt-5 flex items-center gap-3">
+                <p className="mt-5 mb-6 flex items-center gap-3">
                   {isYearly ? (
                     <>
-                      <span className="font-['Manrope',sans-serif] font-semibold text-[56px] leading-[100%] text-(--color-pay-text)">
+                      <span className="font-['Manrope',sans-serif] font-semibold text-[56px] leading-[100%] text-(--color-pay-text) group-hover:text-(--color-on-accent)">
                         {"$" + annualPrice}
                       </span>
-                      <span className="font-['Manrope',sans-serif] font-light text-[16px] leading-[100%] text-(--color-subtext)">
+                      <span className="font-['Manrope',sans-serif] font-light text-[16px] leading-[100%] text-(--color-subtext) group-hover:text-(--color-description-on-accent)">
                         /Year
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="font-['Manrope',sans-serif] font-semibold text-[56px] leading-[100%] text-(--color-pay-text)">
+                      <span className="font-['Manrope',sans-serif] font-semibold text-[56px] leading-[100%] text-(--color-pay-text) group-hover:text-(--color-on-accent)">
                         {"$" + plan.price}
                       </span>
-                      <span className="font-['Manrope',sans-serif] font-light text-[16px] leading-[100%] text-(--color-subtext)">
+                      <span className="font-['Manrope',sans-serif] font-light text-[16px] leading-[100%] text-(--color-subtext) group-hover:text-(--color-description-on-accent)">
                         /Month
                       </span>
                     </>
                   )}
                 </p>
+                <Button
+                  type="start"
+                  verticalPadding="py-0"
+                  horizontalPadding="px-0 group-hover:bg-[var(--color-white-background)] group-hover:text-[var(--color-accent)] group-hover:border-transparent"
+                  child={
+                    <p
+                      className="text-[16px]"
+                      style={{ color: "var(--color-accent)" }}
+                    >
+                      Get Started Now
+                    </p>
+                  }
+                />
+                <ul className="mt-10 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature.name}
+                      className="flex items-center gap-4 text-[16px] leading-[100%]"
+                    >
+                      <div
+                        className="w-8 h-8 min-h-8 min-w-8 rounded-full flex items-center justify-center"
+                        style={{
+                          backgroundColor: feature.included
+                            ? "#FAC4D2"
+                            : "#F7F8F9",
+                        }}
+                      >
+                        <Image
+                          src={
+                            feature.included
+                              ? "/tic_icon.svg"
+                              : "/cross_icon.svg"
+                          }
+                          width={16}
+                          height={16}
+                          alt={feature.included ? "Included" : "Not included"}
+                        />
+                      </div>
+                      <span
+                        className={`${feature.included ? "text-(--color-pay-text) group-hover:text-(--color-on-accent)" : "text-(--color-feature-disabled)"} font-['Manrope',sans-serif] font-medium text-[16px] leading-[100%] tracking-[0%]`}
+                      >
+                        {feature.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </li>
             );
           })}
